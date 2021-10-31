@@ -1,3 +1,4 @@
+set t_Co=256
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching
 set ignorecase              " case insensitive
@@ -13,7 +14,7 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 set cc=120                  " set an 80 column border for good coding style
-filetype plugin indent on   "allow auto-indenting depending on file type
+filetype plugin indent on   " allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
@@ -24,6 +25,7 @@ set backupdir=~/.cache/vim  " Directory to store backup files.
 " Limit popup menu height
 set pumheight=15
 set background=dark
+set termguicolors
 
 set rtp+=~/.local/share/nvim/site/autoload/plug.vim
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
@@ -60,18 +62,13 @@ call plug#end()
 
 syntax on
 syntax enable
-if (has("termguicolors"))
-  set termguicolors
-endif
 
 let g:airline_theme = 'jet'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-" Plugin outside ~/.vim/plugged with post-update hook
 colorscheme tender
-
 highlight Normal guibg=none
 highlight NonText guibg=none
 
@@ -171,6 +168,20 @@ vmap <F10> :call TrimWhiteSpaceInVisual()<cr>
 map <leader>bo :BufOnly<cr>
 map <leader>be :BufOnly<cr>:Bclose<cr>
 
+" Clear search pattern (\c lean)
+map <silent> <leader>c :let @/ = ""<cr>
+
+"Select all
+nnoremap <leader>aa        :keepjumps normal ggVG<cr>
+nnoremap <leader>ai        mzgg=G :%s/^\s\s\*\//\*\//g<cr>`z
+
+"Add semicolen at the end of the line
+nmap <leader>ee  mzEa;<esc>`z:w<cr>
+
+"BufOnly
+map <leader>bo :BufOnly<cr>
+map <leader>be :BufOnly<cr>:Bclose<cr>
+
 "Close the current buffer
 map <leader>bd :Bclose<cr>
 let bclose_multiple = 0
@@ -193,3 +204,4 @@ function! <SID>BufcloseCloseIt()
     execute("bdelete! ".l:currentBufNum)
   endif
 endfunction
+

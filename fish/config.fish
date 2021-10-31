@@ -1,6 +1,7 @@
 stty sane
 set fish_greeting
 fish_vi_key_bindings
+set -g -x EDITOR nvim
 
 set PATH ~/.cargo/bin $PATH
 # Commands to run in interactive sessions can go here
@@ -14,18 +15,29 @@ abbr v nvim
 abbr vi nvim
 abbr vim nvim
 abbr reboot 'sudo reboot'
+abbr systemctl 'sudo systemctl'
 abbr pm 'sudo pacman -S'
+abbr paru 'paru -S'
 abbr src 'source ~/.config/fish/config.fish'
-alias swp='paru -Syyu && yes | paru -Scc'
+alias swp='paru -Syyu && yes | paru -Scc && clear'
 alias freeram='echo 3 | sudo tee /proc/sys/vm/drop_caches'
 alias ls='exa --group-directories-first'
 alias ll='exa -lah'
 alias l='exa -l'
 alias df='df -h'
+alias du='du -sh'
 alias celar=clear
 alias clar=clear
 alias clea=clear
+alias brave='brave-dev --incognito 2>/dev/null 1>/dev/null'
+alias brave-dev='brave-dev --incognito 2>/dev/null 1>/dev/null'
+alias brave-browser-dev='brave-browser-dev --incognito 2>/dev/null 1>/dev/null'
 alias cls=clear
+alias doom='~/.emacs.d/bin/doom'
+alias wp='feh --bg-fill --randomize /media/edrive/wallpapers/*'
+alias ta='tmux attach'
+alias frc='nvim ~/.config/fish/config.fish'
+alias surf='surf lite.duckduckgo.com 2>/dev/null 1>/dev/null &;rm -rf ~/.surf/cache'
 
 # bind
 bind \ce end-of-line accept-autosuggestion
@@ -37,5 +49,5 @@ end
 # source /usr/share/powerline/bindings/fish/powerline-setup.fish
 # powerline-setup
 sh ~/.cargo/env
-
+# starship init fish | source
 clear
