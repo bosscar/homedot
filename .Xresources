@@ -1,3 +1,3 @@
-*.font: Roboto Mono for Powerline:style=Bold:pixelsize=13:antialias=true:autohint=true;
-*.alpha: 0.75
-*.color11: #ffffff
+*.font: Fira Mono for Powerline:style=Bold:pixelsize=12:antialias=true:autohint=true;
+*.alpha: 0.80
+*.color11: #bbbbbb
