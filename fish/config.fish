@@ -2,11 +2,12 @@ stty sane
 set fish_greeting
 fish_vi_key_bindings
 set -g -x EDITOR nvim
+set -g -x GTK_THEME Adwaita:dark
 
-set PATH ~/.cargo/bin $PATH
+set PATH ~/.cargo/bin ~/.local/bin $PATH
 # Commands to run in interactive sessions can go here
 abbr x exit
-abbr t tmux
+abbr t 'tmux -2'
 abbr h htop
 abbr c clear
 abbr sx startx
@@ -35,7 +36,7 @@ alias brave-browser-dev='brave-browser-dev --incognito 2>/dev/null 1>/dev/null'
 alias cls=clear
 alias doom='~/.emacs.d/bin/doom'
 alias wp='feh --bg-fill --randomize /media/edrive/wallpapers/*'
-alias ta='tmux attach'
+alias ta='tmux -2 attach'
 alias frc='nvim ~/.config/fish/config.fish'
 alias surf='surf lite.duckduckgo.com 2>/dev/null 1>/dev/null &;rm -rf ~/.surf/cache'
 

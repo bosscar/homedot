@@ -3,6 +3,7 @@
 #
 export TERM=xterm-256color
 export EDITOR=nvim
+export GTK_THEME=Adwaita:dark
 alias sx=startx
 alias vim=nvim
 alias v=nvim
@@ -25,17 +26,17 @@ alias src="source ~/.bash_profile"
 alias brave='brave-dev --incognito'
 alias brave-dev='brave-dev --incognito'
 alias brave-browser-dev='brave-browser-dev --incognito'
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 . "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 #Startx Automatically
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   startx
 fi
+clear
