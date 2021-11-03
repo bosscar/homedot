@@ -1,6 +1,5 @@
-#
+#L
 # ~/.bashrc
-#
 export TERM=xterm-256color
 export EDITOR=nvim
 export GTK_THEME=Adwaita:dark

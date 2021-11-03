@@ -3,4 +3,5 @@ feh --bg-fill --randomize /media/edrive/wallpapers/*
 xrdb ~/.Xresources
 picom &
 slstatus &
+pasystray &
 exec dwm
