@@ -43,7 +43,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
   Plug 'tomasiser/vim-code-dark'
   Plug 'jdsimcoe/abstract.vim'
   Plug 'nathanaelkane/vim-indent-guides'
-  Plug 'vim-airline/vim-airline'
+  Plug 'foldback/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
   Plug 'tpope/vim-fugitive'
