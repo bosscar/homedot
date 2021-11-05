@@ -13,7 +13,7 @@ abbr c clear
 abbr sx startx
 abbr nf neofetch
 abbr v nvim
-abbr vi nvim
+abbr vi vi
 abbr vim nvim
 abbr reboot 'sudo reboot'
 abbr systemctl 'sudo systemctl'
@@ -30,6 +30,7 @@ alias du='du -sh'
 alias celar=clear
 alias clar=clear
 alias clea=clear
+alias m='cd /media/edrive;ll'
 alias brave='brave-dev --incognito 2>/dev/null 1>/dev/null'
 alias brave-dev='brave-dev --incognito 2>/dev/null 1>/dev/null'
 alias brave-browser-dev='brave-browser-dev --incognito 2>/dev/null 1>/dev/null'
