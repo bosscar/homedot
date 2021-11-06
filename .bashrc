@@ -38,3 +38,5 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   startx
 fi
 clear
+
+source /home/bosscar/.config/broot/launcher/bash/br
