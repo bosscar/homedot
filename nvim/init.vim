@@ -45,6 +45,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'foldback/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'chrisbra/Colorizer'
 
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
