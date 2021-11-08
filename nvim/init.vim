@@ -26,6 +26,8 @@ set backupdir=~/.cache/vim  " Directory to store backup files.
 set pumheight=15
 set background=dark
 set termguicolors
+set undodir=~/.cache/vim
+set undofile
 
 set rtp+=~/.local/share/nvim/site/autoload/plug.vim
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
