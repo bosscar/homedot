@@ -50,6 +50,7 @@ sudo systemctl start cronie sshd
 
 mkdir -p ~/screenshots
 mkdir -p ~/downloads
+mkdir -p ~/projects
 
 pip install rtv jupyterlab pywal
 yes | broot
