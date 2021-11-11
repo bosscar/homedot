@@ -4,4 +4,5 @@ xrdb ~/.Xresources
 picom &
 slstatus &
 pasystray &
+xautolock -time 10 -locker slock &
 exec dwm

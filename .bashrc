@@ -1,7 +1,8 @@
 # ~/.bashrc
 export TERM=xterm-256color
 export EDITOR=nvim
-export GTK_THEME=Adwaita:dark
+export GTK_THEME=Arc-Dark
+export ICON_THEME=Arc
 alias sx=startx
 alias vim=nvim
 alias v=nvim
@@ -38,5 +39,6 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   startx
 fi
 clear
-
+gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Arc'
 source /home/bosscar/.config/broot/launcher/bash/br
