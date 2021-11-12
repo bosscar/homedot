@@ -48,6 +48,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
   Plug 'foldback/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'chrisbra/Colorizer'
+  Plug 'dylanaraps/wal.vim'
 
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
@@ -72,6 +73,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 colorscheme tender
+" colorscheme wal
 highlight Normal guibg=none
 highlight NonText guibg=none
 
