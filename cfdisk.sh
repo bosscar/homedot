@@ -10,8 +10,9 @@ mkfs.fat -F32 /dev/nvme0n1p1
 fatlabel /dev/nvme0n1p1 BOOT
 
 mount /dev/nvme0n1p2 /mnt
-mkdir -p /mnt/{boot,home,others}
+mkdir -p /mnt/{boot,home,others,media/edrive}
 mount /dev/nvme0n1p1 /mnt/boot
 mount /dev/nvme0n1p3 /mnt/home
 mount /dev/nvme0n1p4 /mnt/others
+mount /dev/sda1 /mnt/media/edrive
 

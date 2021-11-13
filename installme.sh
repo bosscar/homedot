@@ -10,34 +10,37 @@ ln -sf ~/.config/.xinitrc ~/.xinitrc
 ln -sf ~/.config/.tmux.conf ~/.tmux.conf
 ln -sf ~/.config/.Xresources ~/.Xresources
 
-mkdir ~/.scripts
-cd ~/.scripts
+mkdir ~/.sources
+cd ~/.sources
 git clone https://github.com/bosscar/dwm-flexipatch.git
 git clone https://github.com/bosscar/st-flexipatch.git
 git clone https://github.com/bosscar/dmenu-flexipatch.git
 git clone https://github.com/bosscar/slstatus.git
+git clone https://github.com/bosscar/slock.git
 git clone https://github.com/dudik/herbe
-git clone  https://github.com/muquit/grabc.git
+git clone https://github.com/muquit/grabc.git
 
-cd ~/.scripts/slstatus
+cd ~/.sources/slstatus
 sudo make clean install
 
-cd ~/.scripts/dmenu-flexipatch
+cd ~/.sources/dmenu-flexipatch
 sudo make clean install
 
-cd ~/.scripts/st-flexipatch
+cd ~/.sources/st-flexipatch
 sudo make clean install
 
-cd ~/.scripts/dwm-flexipatch
+cd ~/.sources/dwm-flexipatch
 sudo make clean install
 
-cd ~/.scripts/grabc
+cd ~/.sources/grabc
 make
 sudo make install
 
-cd ~/.scripts/herbe
+cd ~/.sources/herbe
 sudo make install
 
+cd ~/.sources/slock
+sudo make install
 
 mkdir -p ~/.cache/vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -47,10 +50,12 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 sudo systemctl enable cronie sshd
 sudo systemctl start cronie sshd
+cronjob="* * * * * env DISPLAY=:0 sh ~/.config/walle.sh"
+echo "$cronjob" | sudo crontab -u bosscar -
 
 mkdir -p ~/screenshots
 mkdir -p ~/downloads
-mkdir -p ~/projects
+mkdir -p ~/.config/bin
 
 pip install rtv jupyterlab pywal
 yes | broot
@@ -67,3 +72,8 @@ sudo rm -rf /opt/paru
 
 paru -Syyu && yes | paru -Scc
 paru -S exa bat ripgrep dust fd sd procs cava brave-nightly-bin
+
+git config --global user.email "bosscar@gmail.com"
+git config --global user.name "bosscar"
+git config --global credential.helper store
+# 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

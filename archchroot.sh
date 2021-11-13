@@ -1,4 +1,3 @@
-sudo systemctl enable iwd dhcpcd
 ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 echo "en_US ISO-8859-1" >> /etc/locale.gen
@@ -14,6 +13,8 @@ passwd
 useradd -m -G wheel bosscar
 passwd bosscar
 sudo nvim /etc/sudoers
+sudo nvim /etc/ssh/sshd_config
+sudo nvim /etc/systemd/system/getty.target.wants/getty@tty1.service
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 sudo nvim /etc/default/grub
