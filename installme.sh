@@ -79,4 +79,4 @@ evcxr_jupyter --install
 git config --global user.email "bosscar@gmail.com"
 git config --global user.name "bosscar"
 git config --global credential.helper store
-# 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
+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
