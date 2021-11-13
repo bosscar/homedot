@@ -3,6 +3,7 @@ xrdb ~/.Xresources
 slstatus &
 pasystray &
 xautolock -time 10 -locker slock &
+unclutter -idle 1 -jitter 2 -root &
 sh ~/.config/walle.sh
 picom &
 exec dwm
