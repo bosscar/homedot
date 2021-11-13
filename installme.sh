@@ -19,6 +19,7 @@ git clone https://github.com/bosscar/slstatus.git
 git clone https://github.com/bosscar/slock.git
 git clone https://github.com/dudik/herbe
 git clone https://github.com/muquit/grabc.git
+git clone https://github.com/KoffeinFlummi/htop-vim.git
 
 cd ~/.sources/slstatus
 sudo make clean install
@@ -40,6 +41,12 @@ cd ~/.sources/herbe
 sudo make install
 
 cd ~/.sources/slock
+sudo make install
+
+cd ~/.sources/htop-vim
+./autogen.sh
+./configure
+make
 sudo make install
 
 mkdir -p ~/.cache/vim
