@@ -55,6 +55,7 @@ echo "$cronjob" | sudo crontab -u bosscar -
 
 mkdir -p ~/screenshots
 mkdir -p ~/downloads
+mkdir -p ~/projects
 mkdir -p ~/.config/bin
 
 pip install rtv jupyterlab pywal
@@ -72,6 +73,8 @@ sudo rm -rf /opt/paru
 
 paru -Syyu && yes | paru -Scc
 paru -S exa bat ripgrep dust fd sd procs cava brave-nightly-bin
+cargo install evcxr_jupyter
+evcxr_jupyter --install
 
 git config --global user.email "bosscar@gmail.com"
 git config --global user.name "bosscar"
